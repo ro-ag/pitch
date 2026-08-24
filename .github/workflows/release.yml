@@ -22,7 +22,7 @@ jobs:
     permissions:
       contents: write
       actions: read # CI-status gate
-    uses: ro-ag/infra/.github/workflows/rust-bin-release.yml@main
+    uses: ./.github/workflows/rust-bin-release.yml
     with:
       bin: pitch
       team-id: 3CAJR4ZDMQ

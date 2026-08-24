@@ -11,4 +11,4 @@ on:
 
 jobs:
   nightly:
-    uses: ro-ag/infra/.github/workflows/rust-nightly.yml@main
+    uses: ./.github/workflows/rust-nightly.yml
