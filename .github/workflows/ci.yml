@@ -1,4 +1,5 @@
-# Template CI — thin caller; jobs live in ro-ag/infra.
+# CI — thin local caller. The jobs live in the vendored copy
+# .github/workflows/rust-ci.yml, synced from ro-ag/infra.
 
 name: CI
 
@@ -7,6 +8,7 @@ on:
     branches: [main]
     paths-ignore: ['**/*.md', 'docs/**']
   pull_request:
+    types: [opened, synchronize, reopened, labeled] # labeled: run-macos gate must fire
     paths-ignore: ['**/*.md', 'docs/**']
   workflow_dispatch:
 

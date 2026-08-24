@@ -33,13 +33,15 @@ cargo test
 
 ## Release process
 
-CI and release are thin callers of the shared pipelines in
-[ro-ag/infra](../..):
+CI and release are vendored copies of the shared pipelines in
+[ro-ag/infra](https://github.com/ro-ag/infra), called via local `./` paths —
+GitHub does not allow a public repo to call reusable workflows in a private
+one. Re-sync the vendored files from ro-ag/infra when the standard changes:
 
-- `.github/workflows/ci.yml` → `ro-ag/infra/.github/workflows/rust-ci.yml`
+- `.github/workflows/ci.yml` → `./.github/workflows/rust-ci.yml` (vendored)
   (Linux gate, Windows on PRs+main, macOS gated to main/manual/`run-macos`)
-- `.github/workflows/release.yml` → `ro-ag/infra/.github/workflows/rust-bin-release.yml`
-  (tag `v*` → validate → 4 native builds → macOS codesign + notarize →
+- `.github/workflows/release.yml` → `./.github/workflows/rust-bin-release.yml` (vendored)
+  (tag `v*` → validate → 5 native builds → macOS codesign + notarize →
   checksummed GitHub release)
 
 To cut a release: bump `version` in `Cargo.toml`, add a `## [X.Y.Z]` section
