@@ -47,7 +47,7 @@ jobs:
           - { os: ubuntu-24.04,     toolchain: nightly }
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Resolve toolchain
         id: tc
         shell: bash
@@ -71,7 +71,7 @@ jobs:
     name: coverage (llvm-cov)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Toolchain channel
         id: tc
         run: |
@@ -94,7 +94,7 @@ jobs:
     name: docs (rustdoc -D warnings)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Toolchain channel
         id: tc
         run: |
@@ -116,7 +116,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true # informational; not a merge gate
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Toolchain channel
         id: tc
         run: |
@@ -144,7 +144,7 @@ jobs:
           - { os: macos-15,         target: aarch64-apple-darwin      }
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Toolchain channel
         id: tc
         shell: bash
@@ -169,5 +169,5 @@ jobs:
     name: actionlint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: rhysd/actionlint@914e7df21a07ef503a81201c76d2b11c789d3fca # v1.7.12
