@@ -1,6 +1,7 @@
-# Template release — thin caller; the pipeline lives in ro-ag/infra
-# (workflows/rust-bin-release.yml). Tag-only trigger: never on branches, so
-# it can't race the CI run on the same commit.
+# Release — thin local caller. The pipeline lives in the vendored copy
+# .github/workflows/rust-bin-release.yml, synced from ro-ag/infra.
+# Tag-only trigger: never on branches, so it can't race the CI run on the
+# same commit.
 #
 # One-time setup for a new repo:
 #   /Users/rodox/dev/apple-developer-signing/setup-github-secrets.sh owner/repo
